@@ -1,22 +1,24 @@
 * {
     margin: 0;
     padding: 0;
-	box-sizing: border-box;	
-}	
+    box-sizing: border-box;
+}
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 #particles-js {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh; /* Asegura que ocupe solo la altura de la vista */
+	max-width: 100%;
+    width: 100%;
+    height: 100vh;
     background-color: transparent;
-    overflow: hidden; /* Previene el desbordamiento */
 }
+
 
 body {
     font-family: 'Poppins', sans-serif;
@@ -25,7 +27,7 @@ body {
     background-color: #f4f4f4;
     color: #fff;
     line-height: 1.6;
-    overflow-x: hidden; /* Previene el desplazamiento horizontal */
+	max-width: 100%;
 }
 
 .navbar ul {
@@ -36,16 +38,7 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
-    overflow-x: hidden; /* Previene el desbordamiento horizontal */
 }
-
-.project-card, .business-content, .hero-content {
-    overflow-x: hidden; /* Previene el desbordamiento horizontal */
-}
-
-
-
-
 
 .navbar {
     background: linear-gradient(90deg, #000000, #434343);
@@ -54,19 +47,17 @@ body {
     top: 0;
     z-index: 1000;
     transition: background 0.3s, padding 0.3s;
-    margin: 0; /* Asegúrate de que no haya margen */
+    margin: 0;
 }
 
 .navbar.scrolled {
-    background: #000; /* Cambia el color del fondo */
+    background: #000;
     padding: 10px 0;
     position: sticky;
     top: 0;
     z-index: 1000;
     transition: background 0.3s, padding 0.3s;
 }
-
-
 
 .navbar li {
     margin: 0 15px;
@@ -80,13 +71,12 @@ body {
     display: block;
 }
 
-
 .navbar a:hover {
-    color: #ff9800; /* Naranja */
+    color: #ff9800;
 }
 
 .hero {
-    background: linear-gradient(90deg, #000000, #434343); /* Degradado */
+    background: linear-gradient(90deg, #000000, #434343);
     color: white;
     padding: 80px 20px;
     text-align: center;
@@ -110,8 +100,8 @@ body {
 .company-info {
     font-size: 1.2em;
     margin-top: 20px;
-    color: #b0b0b0; /* Gris claro */
-    font-style: italic; /* Cambiar a cursiva */
+    color: #b0b0b0;
+    font-style: italic;
 }
 
 .hero::after {
@@ -132,7 +122,7 @@ main {
 }
 
 h2 {
-    color: #ff9800; /* Naranja */
+    color: #ff9800;
     margin-bottom: 20px;
     text-align: center;
 }
@@ -140,7 +130,7 @@ h2 {
 section {
     margin: 40px 0;
     padding: 20px;
-    background: #434343; /* Fondo gris oscuro */
+    background: #434343;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
@@ -155,7 +145,7 @@ section {
 }
 
 #contact, #about {
-    background: linear-gradient(90deg, #000000, #434343); /* Degradado */
+    background: linear-gradient(90deg, #000000, #434343);
 }
 
 #about p,
@@ -167,17 +157,17 @@ section {
 
 #projects {
     padding: 40px 20px;
-    background: #3a3a3a; /* Fondo gris más claro */
+    background: #3a3a3a;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 #projects:hover {
-    background-color: #323232; /* Fondo más oscuro al pasar el mouse */
+    background-color: #323232;
 }
 
 .project-card {
-    background: linear-gradient(90deg, #000000, #434343); /* Degradado */
+    background: linear-gradient(90deg, #000000, #434343);
     border-radius: 12px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     padding: 20px;
@@ -188,7 +178,7 @@ section {
 .project-row {
     display: flex;
     align-items: center;
-    flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+    flex-wrap: wrap;
 }
 
 .project-image {
@@ -196,12 +186,12 @@ section {
     height: auto;
     margin-right: 20px;
     border-radius: 50%;
-    flex-shrink: 0; /* Evita que la imagen se encoja */
+    flex-shrink: 0;
 }
 
 .project-info {
     flex: 1;
-    min-width: 200px; /* Asegura un ancho mínimo para el texto */
+    min-width: 200px;
 }
 
 @media (max-width: 768px) {
@@ -214,9 +204,11 @@ section {
     .project-image {
         margin: 0 0 20px 0;
     }
+
+    .hero-title {
+        font-size: 2.5em;
+    }
 }
-
-
 
 .features {
     margin: 10px 0;
@@ -225,7 +217,7 @@ section {
 
 .features li {
     margin-bottom: 5px;
-    color: #fff; /* Naranja */
+    color: #fff;
 }
 
 .tags {
@@ -233,6 +225,8 @@ section {
     gap: 10px;
     margin-top: 20px;
     align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .tag-available,
@@ -240,7 +234,7 @@ section {
     display: flex;
     align-items: center;
     gap: 5px;
-    background-color: #ff9800; /* Naranja para disponible */
+    background-color: #ff9800;
     color: white;
     padding: 5px 10px;
     border-radius: 5px;
@@ -250,16 +244,16 @@ section {
 }
 
 .tag-coming-soon {
-    background-color: #ff5722; /* Rojo para próximamente */
+    background-color: #ff5722;
 }
 
 .tag-available:hover {
-    background-color: #e68a00; /* Naranja oscuro */
+    background-color: #e68a00;
     color: #fff;
 }
 
 .tag-coming-soon:hover {
-    background-color: #e64a19; /* Rojo más oscuro */
+    background-color: #e64a19;
 }
 
 .tags img {
@@ -273,26 +267,25 @@ section {
 }
 
 footer {
-    background: linear-gradient(90deg, #000000, #434343); /* Degradado */
+    background: linear-gradient(90deg, #000000, #434343);
     color: white;
     text-align: center;
     padding: 15px 0;
-    margin: 0; /* Asegúrate de que no haya margen */
+    margin: 0;
 }
 
-
 a {
-    color: #ff9800; /* Naranja */
+    color: #ff9800;
     text-decoration: none;
     transition: color 0.3s;
 }
 
 a:hover {
-    color: #e68a00; /* Naranja oscuro */
+    color: #e68a00;
 }
 
 .business-section {
-    background: linear-gradient(90deg, #000000, #434343); /* Degradado */
+    background: linear-gradient(90deg, #000000, #434343);
     color: white;
     padding: 50px 20px;
     text-align: center;
@@ -310,7 +303,7 @@ a:hover {
 
 .business-image {
     padding: 5px;
-    background: linear-gradient(90deg, #000000, #434343); /* Degradado */
+    background: linear-gradient(90deg, #000000, #434343);
     max-width: 200px;
     border-radius: 50%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -322,7 +315,7 @@ a:hover {
 }
 
 .highlight {
-    color: #ff9800; /* Naranja */
+    color: #ff9800;
     font-weight: bold;
 }
 
@@ -331,7 +324,6 @@ a:hover {
     justify-content: center;
     margin-bottom: 35px;
 }
-
 
 .avatar img {
     border-radius: 50%;

@@ -1,23 +1,24 @@
+// Inicializar AOS (Animate On Scroll)
 AOS.init({
-    duration: 1000,
-    once: false
+    duration: 1000,  // Duración de la animación
+    once: false      // Si es true, la animación se ejecuta solo una vez
 });
 
-// JavaScript para animar el avatar
+// Animación del avatar
 const avatar = document.querySelector('.avatar img');
 let angle = 0;
 
 function animateAvatar() {
-    angle += 0.05;
-    const x = Math.sin(angle) * 20;
-    const y = Math.cos(angle) * 20;
-    avatar.style.transform = `translate(${x}px, ${y}px) scale(1.1)`;
-    requestAnimationFrame(animateAvatar);
+    angle += 0.05;  // Incrementar el ángulo para la animación
+    const x = Math.sin(angle) * 20;  // Calcular la posición x
+    const y = Math.cos(angle) * 20;  // Calcular la posición y
+    avatar.style.transform = `translate(${x}px, ${y}px) scale(1.1)`;  // Aplicar la transformación
+    requestAnimationFrame(animateAvatar);  // Solicitar el siguiente cuadro de animación
 }
 
-animateAvatar();
+animateAvatar();  // Iniciar la animación
 
-// JavaScript para partículas
+// Configuración de particles.js
 particlesJS("particles-js", {
     "particles": {
         "number": {
@@ -64,7 +65,7 @@ particlesJS("particles-js", {
             "direction": "none",
             "random": false,
             "straight": false,
-            "out_mode": "out",
+            "out_mode": "bounce",
             "bounce": false,
             "attract": {
                 "enable": false,
@@ -117,8 +118,8 @@ particlesJS("particles-js", {
 window.onscroll = function() {
     const navbar = document.querySelector('.navbar');
     if (window.pageYOffset > 50) {
-        navbar.classList.add('scrolled');
+        navbar.classList.add('scrolled');  // Agregar clase si se hace scroll
     } else {
-        navbar.classList.remove('scrolled');
+        navbar.classList.remove('scrolled');  // Remover clase si no hay scroll
     }
 };

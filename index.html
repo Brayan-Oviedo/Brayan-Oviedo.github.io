@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio Profesional</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+<body>
+    <div id="particles-js"></div>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="#about">Sobre Mí</a></li>
+            <li><a href="#projects">Proyectos</a></li>
+            <li><a href="#business">Empresa</a></li>
+            <li><a href="#contact">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero" data-aos="fade-down">
+        <div class="hero-content">
+            <h1 class="hero-title">Brayan Oviedo Quintero</h1>
+            <div class="company-info">
+                <p>DTS Rise Corporation: Ascendemos creando, nos superamos innovando.</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" data-aos="fade-up">
+            <h2>Sobre Mí</h2>
+            <div class="avatar">
+                <img src="images/profile.gif" alt="Avatar">
+            </div>
+            <p>Hola, soy un desarrollador apasionado por crear soluciones innovadoras que impacten positivamente en las personas...</p>
+        </section>
+
+        <div class="parallax"></div>
+
+        <section id="projects" data-aos="fade-left">
+            <h2>Proyectos Destacados</h2>
+            <div class="project-card">
+                <div class="project-row">
+                    <img src="images/price-wise-logo.png" alt="Proyecto 1" class="project-image">
+                    <div class="project-info">
+                        <h3>Price Wise</h3>
+                        <p>Price Wise es tu asistente de compras inteligente. Compara precios de productos similares y obtén un análisis detallado de ganancias y pérdidas, ahorrando tiempo y dinero en cada compra.</p>
+                        <ul class="features">
+                            <li><p><span class="highlight">Comparación</span> de precios en tiempo real</p></li>
+                            <li><p><span class="highlight">Disponible</span> en múltiples plataformas</p></li>
+                            <li><p>Completamente<span class="highlight"> gratis</span></p></li>
+                        </ul>
+                        <div class="tags">
+                            <a href="https://play.google.com/store/apps/details?id=co.fanti.price_wise" class="tag-available">
+                                <img src="images/google-play-store-logo.png" alt="Play Store">
+                                Disponible en Play Store
+                            </a>
+                            <span class="tag-coming-soon">
+                                <img src="images/app-store-logo.png" alt="App Store">
+                                Próximamente en App Store
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Más proyectos -->
+        </section>
+
+        <div class="parallax"></div>
+
+        <section id="business" class="business-section" data-aos="fade-up">
+            <h2 class="highlight">Fundador de DTS Rise Corporation</h2>
+            <div class="business-content">
+                <img src="images/image-software.jpg" alt="business" class="business-image">
+                <div class="business-info">
+                    <p><span class="highlight">Tecnologia:</span> Creación y gestión de aplicaciones móviles y web.</p>
+                    <p><span class="highlight">Contenido:</span> Desarrollo de contenido y marketing digital.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="parallax"></div>
+
+        <section id="contact" data-aos="fade-up">
+            <h2>Contacto</h2>
+            <p>¿Quieres saber más? <a href="mailto:dtsrbra@gmail.com">Contáctame</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2023 Brayan Oviedo Quintero | DTS Rise Corporation. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // JavaScript para animar el avatar
+        const avatar = document.querySelector('.avatar img');
+        let angle = 0;
+
+        function animateAvatar() {
+            angle += 0.05;
+            const x = Math.sin(angle) * 20;
+            const y = Math.cos(angle) * 20;
+            avatar.style.transform = `translate(${x}px, ${y}px) scale(1.1)`;
+            requestAnimationFrame(animateAvatar);
+        }
+
+        animateAvatar();
+
+        // JavaScript para partículas
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#ffffff"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 6,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 400,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+
+        // JavaScript para cambiar la barra de navegación al hacer scroll
+        window.onscroll = function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.pageYOffset > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        };
+    </script>
+</body>
+</html>

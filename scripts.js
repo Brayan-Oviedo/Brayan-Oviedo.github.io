@@ -1,7 +1,9 @@
 // Inicializar AOS (Animate On Scroll)
-AOS.init({
-    duration: 1000,  // Duración de la animación
-    once: false      // Si es true, la animación se ejecuta solo una vez
+document.addEventListener("DOMContentLoaded", function() {
+    AOS.init({
+        duration: 1000,
+        once: true
+    });
 });
 
 // Animación del avatar
